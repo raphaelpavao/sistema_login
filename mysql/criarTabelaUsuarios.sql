@@ -1,0 +1,17 @@
+CREATE TABLE `usuarios` (
+	`id` INT(3) NOT NULL AUTO_INCREMENT,
+	`nome` CHAR(50) NOT NULL,
+	`email` CHAR(50) NULL DEFAULT NULL,
+	`senha` CHAR(50) NOT NULL,
+	`restricao` CHAR(2) NOT NULL DEFAULT '99',
+	`ativo` CHAR(1) NOT NULL DEFAULT '1',
+	`data_inclusao` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	`data_desativacao` DATETIME NULL DEFAULT NULL,
+	PRIMARY KEY (`id`),
+	UNIQUE INDEX `usuario` (`nome`),
+	UNIQUE INDEX `email` (`email`)
+)
+COLLATE='latin1_swedish_ci'
+ENGINE=MyISAM
+AUTO_INCREMENT=14
+;

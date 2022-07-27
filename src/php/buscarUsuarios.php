@@ -13,7 +13,7 @@
                 <td>{$usuario['ativo']}</td>
                 <td>{$usuario['data_inclusao']}</td>
                 <td>{$usuario['data_desativacao']}</td>
-                <td><a href='https://www.w3schools.com'>Desativar</a></td>
+                <td><a href='desativar'>Desativar</a></td>
             </tr>
         "); 
     };
