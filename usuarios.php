@@ -3,9 +3,8 @@
   <head>
     <?php 
       require_once 'src/php/validarRestricao.php';
-      require_once 'src/php/buscarUsuarios.php';
       //colocar o nível de restrição, quando menor, mais restrito.
-      $nivelPagina = 1;
+      $nivelPagina = 0;
       validarRestricao($nivelPagina);
     ?>
     <meta charset="utf-8">
@@ -17,6 +16,11 @@
     <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" href="plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+    <link rel="stylesheet" href="dist/css/login.css">
+    <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="src/js/buscarUsuarios.js"></script>
+    <script src="src/js/desativarUsuario.js"></script>
+    <script src="src/js/ativarUsuario.js"></script>
   </head>
   <body class="hold-transition sidebar-mini layout-boxed">
     <div class="wrapper">
@@ -46,29 +50,33 @@
             <div class="row">
               <div class="col-12">
                 <div class="card">
-                <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">DataTable with default features</h3>
-              </div>
-              <div class="card-body">
-                <table id="example1" class="table table-bordered table-striped">
-                  <thead>
-                    <tr>
-                      <th>Nome</th>
-                      <th>Email</th>
-                      <th>Restriçao</th>
-                      <th>Ativo</th>
-                      <th>Data de i nclusão</th>
-                      <th>Data de desativação</th>
-                      <th>Ação</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <?php buscarUsuarios()?>
-                  </tbody>
-                </table>
-              </div>
-            </div>
+                  <div class="card">
+                    <div class="card-header">
+                      <form class="form-horizontal" id="form" method = "POST" action="cadastrarUsuario.php">
+                        <div class="card-footer">
+                          <button type="submit" class="btn btn-info" id="entrar">Criar Novo Usuário</button>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="card-body">
+                      <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                          <tr>
+                            <th>Nome</th>
+                            <th>Email</th>
+                            <th>Restriçao</th>
+                            <th>Ativo</th>
+                            <th>Data de inclusão</th>
+                            <th>Data de desativação</th>
+                            <th>Ação</th>
+                          </tr>
+                        </thead>
+                        <tbody id="resultado">
+                        </tbody>
+                      </table>
+                      <script>buscarUsuarios();</script>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -82,6 +90,7 @@
       <aside class="control-sidebar control-sidebar-dark">
       </aside>
     </div>
+    <script>buscarUsuarios();</script>
     <script src="plugins/jquery/jquery.min.js"></script>
     <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="dist/js/adminlte.min.js"></script>
@@ -101,19 +110,10 @@
       $(function () {
         $("#example1").DataTable({
           "responsive": true, 
-          "lengthChange": false, 
+          "lengthChange": true, 
           "autoWidth": true,
           "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
         }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-        $('#example2').DataTable({
-          "paging": true,
-          "lengthChange": false,
-          "searching": false,
-          "ordering": true,
-          "info": true,
-          "autoWidth": true,
-          "responsive": true,
-        });
       });
     </script>
   </body>

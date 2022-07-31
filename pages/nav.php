@@ -1,5 +1,5 @@
 <?php 
-  if(!isset($_SESSION['nivelRestricao'])){
+  if(!isset($_SESSION['usuarioRestricao'])){
     header("Location:login.php");
   }
 ?>
@@ -17,7 +17,7 @@
   </ul>
   <ul class="navbar-nav ml-auto">
     <li class="nav-item">
-      <a href="src/php/sair.php" class="nav-link">Sair</a>
+      <a href="src/php/sairUsuario.php" class="nav-link">Sair</a>
     </li>
   </ul>
 </nav>

@@ -6,6 +6,12 @@
       //colocar o nível de restrição, quando menor, mais restrito.
       $nivelPagina = 99;
       validarRestricao($nivelPagina);
+      if(!isset ($_SESSION['usuarioSemRestricao'])){
+        $_SESSION['usuarioSemRestricao'] = '';
+      }
+      $mensagem = $_SESSION['usuarioSemRestricao'];
+      unset( $_SESSION['usuarioSemRestricao'] );
+
     ?>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,6 +49,9 @@
             <div class="row">
               <div class="col-12">
                 <div class="card">
+                  <div>            
+                    <label class="col-sm-6 col-form-label"><?php echo $mensagem;?></label>
+                  </div>
                 </div>
               </div>
             </div>

@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
+    <?php
+      session_start();
+      if(!isset($_SESSION['erroLogin'])){
+        $_SESSION['erroLogin'] = '';
+      }
+      $mensagem = $_SESSION['erroLogin'];
+      session_destroy();
+      unset( $_SESSION );
+    ?>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Login PHP com AdminLTE 3</title>
@@ -29,18 +39,12 @@
                 <input name = "psw" type="password" autocomplete="current-password" class="form-control" id="inputPassword3" placeholder="Password">
               </div>
             </div>
-            <div class="form-group row">
-              <div class="offset-sm-2 col-sm-10">
-                <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck2">
-                  <label class="form-check-label" for="exampleCheck2">Remember me</label>
-                </div>
-              </div>
-            </div>
+          </div>
+          <div>            
+              <label class="col-sm-6 col-form-label"><?php echo $mensagem;?></label>
           </div>
           <div class="card-footer">
-            <button type="submit" class="btn btn-info" id="entrar">Sign in</button>
-            <button type="submit" class="btn btn-default float-right">Cancel</button>
+            <button type="submit" class="btn btn-info" id="entrar">Entrar</button>
           </div>
         </form>
       </div>

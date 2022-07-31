@@ -2,7 +2,7 @@
 <html lang="pt-br">
   <head>
     <?php 
-      if(!isset($_SESSION['nivelRestricao'])){
+      if(!isset($_SESSION['usuarioRestricao'])){
         header("Location:login.php");
         session_start();
       }
@@ -11,18 +11,18 @@
   <body>
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <a href="index.php" class="brand-link">
-        <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <img src= "dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-light">AdminLTE 3</span>
       </a>
       <div class="sidebar">
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <div class="image">
-            <img src="dist/img/avatar4.png" class="img-circle elevation-2" alt="User Image">
+            <img src='<?php echo $_SESSION['usuarioFoto']?>' class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
             <a href="#" class="d-block">
               <?php 
-                echo utf8_encode($_SESSION['nomeUsuario']);
+                echo utf8_encode($_SESSION['usuarioNome']);
               ?>
             </a>
           </div>
