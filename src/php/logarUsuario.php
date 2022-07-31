@@ -26,6 +26,7 @@
     };    
 
     session_start();
+    $_SESSION['usuarioId'] = $usuario['id'];
     $_SESSION['usuarioEmail'] = $usuario['email'];
     $_SESSION['usuarioRestricao'] = $usuario['restricao'];
     $_SESSION['usuarioNome'] = $usuario['nome'];

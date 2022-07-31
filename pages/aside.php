@@ -20,7 +20,7 @@
             <img src='<?php echo $_SESSION['usuarioFoto']?>' class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
-            <a href="#" class="d-block">
+            <a href="alterarUsuario.php" class="d-block">
               <?php 
                 echo utf8_encode($_SESSION['usuarioNome']);
               ?>

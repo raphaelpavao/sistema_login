@@ -4,7 +4,7 @@
     <?php 
       require_once 'src/php/validarRestricao.php';
       //colocar o nível de restrição, quando menor, mais restrito.
-      $nivelPagina = 0;
+      $nivelPagina = 2;
       validarRestricao($nivelPagina);
     ?>
     <meta charset="utf-8">
