@@ -1,9 +1,3 @@
-<?php 
-  if(!isset($_SESSION['usuarioRestricao'])){
-    header("Location:login.php");
-  }
-?>
-
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
   <ul class="navbar-nav">
     <li class="nav-item">
@@ -17,7 +11,7 @@
   </ul>
   <ul class="navbar-nav ml-auto">
     <li class="nav-item">
-      <a href="src/php/sairUsuario.php" class="nav-link">Sair</a>
+      <a href="src/php/logoutUsuario.php" class="nav-link">Sair</a>
     </li>
   </ul>
 </nav>

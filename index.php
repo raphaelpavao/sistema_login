@@ -1,17 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
+  <head>    
     <?php 
-      require_once 'src/php/validarRestricao.php';
-      //colocar o nível de restrição, quando menor, mais restrito.
-      $nivelPagina = 99;
-      validarRestricao($nivelPagina);
-      if(!isset ($_SESSION['usuarioSemRestricao'])){
-        $_SESSION['usuarioSemRestricao'] = '';
-      }
-      $mensagem = $_SESSION['usuarioSemRestricao'];
-      unset( $_SESSION['usuarioSemRestricao'] );
-
+      session_start();
+      require 'src/php/verificaUsuarioLogado.php'
     ?>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,7 +15,7 @@
   <body class="hold-transition sidebar-mini layout-boxed">
     <div class="wrapper">
       <?php
-        //Requisição da barra de navegação e do menu lateral
+        //Requisita o NAV e o ASIDD 
         require_once 'pages/nav.php';
         require_once 'pages/aside.php';
       ?>
@@ -49,9 +41,6 @@
             <div class="row">
               <div class="col-12">
                 <div class="card">
-                  <div>            
-                    <label class="col-sm-6 col-form-label"><?php echo $mensagem;?></label>
-                  </div>
                 </div>
               </div>
             </div>
@@ -59,7 +48,6 @@
         </section>
       </div>
       <?php
-        //requisição do footer
         require_once 'pages/footer.php';
       ?>
       <aside class="control-sidebar control-sidebar-dark">
