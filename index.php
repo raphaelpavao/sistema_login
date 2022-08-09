@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>    
-    <?php 
-      session_start();
+    <?php       
       require 'src/php/verificaUsuarioLogado.php'
     ?>
     <meta charset="utf-8">
