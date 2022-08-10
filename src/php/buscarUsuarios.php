@@ -1,8 +1,8 @@
 <?php
-    require_once 'conectarBanco.php';
-    $conexaoBanco = conectarBanco();
+
+    $conexao = mysqli_connect("localhost","root","MySQL@2022","sistema_login");
     $query = "select * from usuarios";
-    $resultado = mysqli_query($conexaoBanco, $query) or die(mysqli_error($conexao));
+    $resultado = mysqli_query($conexao, $query) or die(mysqli_error($conexao));
     while($usuario = mysqli_fetch_assoc($resultado)){
         $ativo = 'Desativar';
         $funcao = 'desativarUsuario';
@@ -11,7 +11,7 @@
             $funcao = 'ativarUsuario';
         }      
 
-        echo utf8_encode( "
+        echo("
             <tr>
                 <td>{$usuario['nome']}</td>
                 <td>{$usuario['email']}</td>

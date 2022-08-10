@@ -64,6 +64,7 @@
                         </tr>
                       </thead>
                       <tbody id="resultado">
+                        <?php require 'src/php/buscarUsuarios.php'?>
                       </tbody>
                     </table>
                   </div>
