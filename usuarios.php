@@ -2,7 +2,7 @@
 <html lang="pt-br">
   <head>
     <?php 
-      require 'src/php/verificaUsuarioLogado.php'
+      require 'src/php/verificaUsuarioLogado.php';
     ?>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,11 +13,7 @@
     <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" href="plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
-    <link rel="stylesheet" href="dist/css/login.css">
     <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
-    <script src="src/js/buscarUsuarios.js"></script>
-    <script src="src/js/desativarUsuario.js"></script>
-    <script src="src/js/ativarUsuario.js"></script>
   </head>
   <body class="hold-transition sidebar-mini layout-boxed">
     <div class="wrapper">
@@ -48,7 +44,7 @@
               <div class="col-12">
                 <div class="card">
                   <div class="card-header">
-                    <form class="form-horizontal" id="form" method = "POST" action="cadastrarUsuario.php">
+                    <form class="form-horizontal" id="form" method = "POST" action="cadastraUsuario.php">
                         <div class="card-footer">
                           <button type="submit" class="btn btn-info" id="entrar">Criar Novo Usuário</button>
                         </div>
@@ -70,7 +66,6 @@
                       <tbody id="resultado">
                       </tbody>
                     </table>
-                    <script>buscarUsuarios();</script>
                   </div>
                 </div>
               </div>
@@ -84,7 +79,6 @@
       <aside class="control-sidebar control-sidebar-dark">
       </aside>
     </div>
-    <script>buscarUsuarios();</script>
     <script src="plugins/jquery/jquery.min.js"></script>
     <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="dist/js/adminlte.min.js"></script>
