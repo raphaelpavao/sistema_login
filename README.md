@@ -6,6 +6,7 @@ Este projeto consiste em um portal logado desenvolvido em C# com banco de dados 
 
 - **Linguagem**: PHP
 - **Banco de Dados**: MySQL
+- **Frontend**: Bootstrap/HTML
 
 ## Funcionalidades
 
